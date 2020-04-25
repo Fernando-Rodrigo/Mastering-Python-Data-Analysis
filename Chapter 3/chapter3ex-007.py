@@ -1,8 +1,5 @@
-import scipy.stats as st
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-from pandas import Series, DataFrame
 import numpy.random as rnd
 import scipy.stats as st
 import os
