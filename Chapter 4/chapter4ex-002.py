@@ -10,8 +10,8 @@ local_filename, headers = urllib.request.urlretrieve(suicide_rate_url, filename=
 rates = pd.read_csv(local_filename, names=['Country', 'Both', 'Female', 'Male'], skiprows=3)
 rates.head(10)
 
-rates.plot.hist(stacked=True, y=['Male', 'Female'],
-                bins=30, color=['Coral', 'Green'])
-plt.xlabel('Rate')
+print(rates['Male'].mean(), rates['Female'].mean())
+
+rates.boxplot(['Both', 'Male', 'Female'])
 
 plt.show()
