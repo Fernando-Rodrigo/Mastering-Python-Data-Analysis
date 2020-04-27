@@ -22,8 +22,7 @@ b = rates[selection]['Both'].astype('float')
 A = sm.add_constant(A)
 est = sm.OLS(b, A).fit()
 
-X, Y = np.meshgrid(np.linspace(A.DFE.min(), A.DFE.max(), 100), 
-                       np.linspace(A.GDP_CD.min(), A.GDP_CD.max(), 100))
+X, Y = np.meshgrid(np.linspace(A.DFE.min(), A.DFE.max(), 100), np.linspace(A.GDP_CD.min(), A.GDP_CD.max(), 100))
 Z = est.params[0] + est.params[1] * X + est.params[2] * Y
 
 
